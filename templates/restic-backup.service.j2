@@ -43,4 +43,4 @@ ExecStartPost={{ restic_path }} prune
 
 {% if restic_webhook_enabled %}
 ExecStartPost=/usr/bin/curl '{{ restic_webhook_url }}'
-{% endif -$}
+{% endif -%}
