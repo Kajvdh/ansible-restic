@@ -40,3 +40,7 @@ ExecStartPost={{ restic_path }} forget --keep-within {{ restic_forget_keep_withi
 {% if restic_prune %}
 ExecStartPost={{ restic_path }} prune
 {% endif -%}
+
+{% if restic_webhook_enabled %}
+ExecStartPost=/usr/bin/curl '{{ restic_webhook_url }}'
+{% endif -$}

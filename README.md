@@ -66,6 +66,13 @@ See the [systemd.timer](https://www.freedesktop.org/software/systemd/man/systemd
 
 You can see the logs of the backup with `journalctl`. (`journalctl -xefu restic-backup`).
 
+### Enable webhook
+
+A webhook can be configured which will be invoked if the backup ran succesfully.
+
+- `restic_webhook_enabled`: set to true
+- `restic_webhook_url`: Set to the URL that needs to be invoked
+
 ## Example playbook
 
 ```yaml
